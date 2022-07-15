@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BoxController;
+use App\Models\Box;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::prefix('api')->group(function () {
+    //get Boxes
+    Route::get('getBoxes', [BoxController::class, 'getBoxes']);
 });
