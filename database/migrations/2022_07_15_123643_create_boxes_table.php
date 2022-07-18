@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('boxes', function (Blueprint $table) {
-            $table->id('box_id');
+            $table->unsignedInteger('id');
             $table->string('box_name');
             $table->timestamps();
         });
