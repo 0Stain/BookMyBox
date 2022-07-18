@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoxController;
+use App\Http\Controllers\BookingController;
 use App\Models\Box;
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,9 @@ Route::get('/', function () {
 Route::prefix('api')->group(function () {
     //get Boxes
     Route::get('getBoxes', [BoxController::class, 'getBoxes']);
+});
+
+Route::prefix('api')->group(function () {
+    //get Boxes
+    Route::get('getBookings', [BookingController::class, 'getBookings']);
 });
