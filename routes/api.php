@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('getBoxes', [BoxController::class, 'getBoxes']); //View boxes
 Route::get('getBookings', [BookingController::class, 'getBookings']); //View bookings
-//Route ::get()
+Route::post('saveBooking', [BookingController::class, 'saveBooking']); //View bookings
