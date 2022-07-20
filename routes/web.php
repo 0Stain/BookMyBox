@@ -20,12 +20,12 @@ Route::get('/', function () {
 });
 
 
-Route::prefix('api')->group(function () {
-    //get Boxes
-    Route::get('getBoxes', [BoxController::class, 'getBoxes']);
-});
+//Route::prefix('api')->group(function () {
+//    //get Boxes
+//    Route::get('getBoxes', [BoxController::class, 'getBoxes']);
+//});
 
-Route::prefix('api')->group(function () {
-    //get Boxes
-    Route::get('getBookings', [BookingController::class, 'getBookings']);
-});
+//Route::prefix('api')->group(function () {
+//    //get Boxes
+//    Route::get('getBookings', [BookingController::class, 'getBookings']);
+//});
