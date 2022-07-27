@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -23,4 +24,22 @@ class BookingController extends Controller
             'code' => 200
         ]);
     }
+
+    public function deleteBooking($id) {
+        $booking = Booking::find($id);
+        if($booking) {
+            $booking->delete();
+            return response()->json([
+               'message' => 'Booking deleted successfully',
+                'code' => 200
+            ]);
+        } else {
+            return response()->json([
+                'message' => "Booking with $id does not exist",
+                'code' => 300
+            ]);
+        }
+    }
+
+
 }

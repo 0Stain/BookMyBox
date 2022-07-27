@@ -26,4 +26,6 @@ Route::get('getBoxes', [BoxController::class, 'getBoxes']); //View boxes
 Route::get('getUsers', [UserController::class, 'getUsers']);
 //Bookings
 Route::get('getBookings', [BookingController::class, 'getBookings']); //View bookings
-Route::post('saveBooking', [BookingController::class, 'saveBooking']); //View bookings
+Route::post('saveBooking', [BookingController::class, 'saveBooking']); //Save bookings
+Route::delete('deleteBooking', [BookingController::class, 'deleteBooking']); //Delete bookings
+
