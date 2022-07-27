@@ -27,5 +27,5 @@ Route::get('getUsers', [UserController::class, 'getUsers']);
 //Bookings
 Route::get('getBookings', [BookingController::class, 'getBookings']); //View bookings
 Route::post('saveBooking', [BookingController::class, 'saveBooking']); //Save bookings
-Route::delete('deleteBooking', [BookingController::class, 'deleteBooking']); //Delete bookings
+Route::delete('deleteBooking/{id}', [BookingController::class, 'deleteBooking']); //Delete bookings
 
