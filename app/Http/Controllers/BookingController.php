@@ -13,7 +13,7 @@ class BookingController extends Controller
     }
     public function saveBooking(Request $request){
         $booking = new Booking();
-        $booking->booking_id = $request->booking_id;
+        $booking->id = $request->id;
         $booking->t_start = $request->t_start;
         $booking->t_end = $request->t_end;
         $booking->user_id = $request->user_id;
