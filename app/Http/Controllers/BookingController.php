@@ -25,8 +25,8 @@ class BookingController extends Controller
         ]);
     }
 
-    public function deleteBooking($booking_id) {
-        $booking = Booking::find($booking_id);
+    public function deleteBooking($id) {
+        $booking = Booking::find($id);
         if($booking) {
             $booking->delete();
             return response()->json([
