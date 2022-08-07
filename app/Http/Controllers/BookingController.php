@@ -35,7 +35,7 @@ class BookingController extends Controller
             ]);
         } else {
             return response()->json([
-                'message' => "Booking with $id does not exist",
+                'message' => "Booking with id:$id does not exist",
                 'code' => 300
             ]);
         }
