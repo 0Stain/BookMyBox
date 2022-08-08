@@ -48,4 +48,20 @@ class BookingController extends Controller
         return response()->json($booking);
     }
 
+
+    public function updateBooking($id, Request $request) {
+        $booking = Booking::where('id', $id)-> first();
+        
+//
+        $booking->t_start = $request->t_start;
+        $booking->t_end = $request->t_end;
+        $booking->user_id = $request->user_id;
+        $booking->box_id = $request->box_id;
+        $booking->save();
+        return response()->json([
+            'message' => 'Booking updated with success',
+            'code' => 200
+        ]);
+    }
+
 }
