@@ -51,8 +51,6 @@ class BookingController extends Controller
 
     public function updateBooking($id, Request $request) {
         $booking = Booking::where('id', $id)-> first();
-        
-//
         $booking->t_start = $request->t_start;
         $booking->t_end = $request->t_end;
         $booking->user_id = $request->user_id;
