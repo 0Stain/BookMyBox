@@ -28,4 +28,4 @@ Route::get('getUsers', [UserController::class, 'getUsers']);
 Route::get('getBookings', [BookingController::class, 'getBookings']); //View bookings
 Route::post('saveBooking', [BookingController::class, 'saveBooking']); //Save bookings
 Route::delete('deleteBooking/{id}', [BookingController::class, 'deleteBooking']); //Delete bookings
-
+Route::get('geditBooking/{id}', [BookingController::class, 'geditBooking']); //Edit booking

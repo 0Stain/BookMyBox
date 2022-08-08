@@ -42,4 +42,10 @@ class BookingController extends Controller
     }
 
 
+
+    public function geditBooking($id){
+        $booking = Booking::find($id);
+        return response()->json($booking);
+    }
+
 }
