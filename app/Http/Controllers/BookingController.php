@@ -57,7 +57,7 @@ class BookingController extends Controller
         $booking->box_id = $request->box_id;
         $booking->save();
         return response()->json([
-            'message' => 'Booking updated with success',
+            'message' => 'Booking updated successfully',
             'code' => 200
         ]);
     }
