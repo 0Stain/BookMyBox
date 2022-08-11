@@ -1,4 +1,5 @@
 {
+    "name": "BookMyBox",
     "private": true,
     "scripts": {
         "dev": "vite",
