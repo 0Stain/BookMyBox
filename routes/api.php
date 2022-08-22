@@ -30,3 +30,4 @@ Route::post('saveBooking', [BookingController::class, 'saveBooking']); //Save bo
 Route::delete('deleteBooking/{id}', [BookingController::class, 'deleteBooking']); //Delete bookings
 Route::get('geditBooking/{id}', [BookingController::class, 'geditBooking']); //Edit booking
 Route::post('updateBooking/{id}', [BookingController::class, 'updateBooking']); //Update bookings
+Route::get('searchBooking/{id}', [BookingController::class, 'searchBooking']); //Search booking
