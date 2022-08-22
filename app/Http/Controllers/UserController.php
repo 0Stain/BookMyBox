@@ -33,11 +33,41 @@ class UserController extends Controller
             'user' => $user,
             'token' => $token
         ];       
-        
-
 
         return response($response, 200);
-        
+    }
+
+
+    public function login(Request $request) {
+        $fields = $request->validate([
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:6',
+        ]);
+       //Check email exists
+        $user = User::where('email', $fields['email'])->first();
+
+        //Check password
+        if(!$user || !Hash::check($fields['password'], $user->password)) {
+            return response()->json([
+                'message' => 'Invalid credentials',
+                'code' => 401
+            ], 401);
+        }
+
+        $token = $user->createToken('myapptoken')->plainTextToken;
+        $response = [
+            'user' => $user,
+            'token' => $token
+        ];       
+
+        return response($response, 200);
+    }
+
+    public function logout(Request $request) {
+        $request->user()->tokens()->delete();
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
     }
 
 }
