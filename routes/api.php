@@ -16,18 +16,19 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//Protected Routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('searchBooking/{id}', [BookingController::class, 'searchBooking']);
 });
 //Boxes
 Route::get('getBoxes', [BoxController::class, 'getBoxes']); //View boxes
 //Users
 Route::get('getUsers', [UserController::class, 'getUsers']);
+Route::post('register', [UserController::class, 'register']);
 //Bookings
 Route::get('getBookings', [BookingController::class, 'getBookings']); //View bookings
 Route::post('saveBooking', [BookingController::class, 'saveBooking']); //Save bookings
 Route::delete('deleteBooking/{id}', [BookingController::class, 'deleteBooking']); //Delete bookings
 Route::get('geditBooking/{id}', [BookingController::class, 'geditBooking']); //Edit booking
 Route::post('updateBooking/{id}', [BookingController::class, 'updateBooking']); //Update bookings
-Route::get('searchBooking/{id}', [BookingController::class, 'searchBooking']); //Search booking
+// Route::get('searchBooking/{id}', [BookingController::class, 'searchBooking']); //Search booking
