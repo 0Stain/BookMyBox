@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
     "core-js": "^3.8.3",
     "cross-env": "^7.0.3",
     "v-model": "0.0.9",

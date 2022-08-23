@@ -36,6 +36,7 @@ Route::get('getBoxes', [BoxController::class, 'getBoxes']); //View boxes
 Route::get('getUsers', [UserController::class, 'getUsers']);
 Route::post('register', [UserController::class, 'register']);//Register
 Route::post('login', [UserController::class, 'login']); //Logout
+Route::get('findEmail/{email}', [UserController::class, 'findEmail']); //Check if email exists
 //Bookings
 Route::get('getBookings', [BookingController::class, 'getBookings']); //View bookings
 Route::get('searchBooking/{id}', [BookingController::class, 'searchBooking']); //Search bookings

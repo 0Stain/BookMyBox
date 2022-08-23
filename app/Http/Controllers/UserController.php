@@ -16,6 +16,21 @@ class UserController extends Controller
         return User::all();
     }
 
+
+
+    //check if provided email exists
+    public function findEmail($email){
+        
+        $user = User::where('email', $email)->first();
+        if($user){
+            return response()->json([
+                'message' => 'Email already exists',
+                'code' => 300
+            ]);
+        }
+    }
+
+
     public function register(Request $request) {
         $fields = $request->validate([
             'name' => 'required|string|max:255',
